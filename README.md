@@ -10,3 +10,7 @@ I will now go into my VM and make sure that shared folders between machines is o
 
 As you can see above, the toolkit folder is shared so I'll be able to see it in the DC01 machine.
 
+My next step is to change the default path of my scripts to a specific OU unit like IT, HR, or Sales department. In order for me to get the right path I should run Get-ADOrganizationalUnit -Filter * in the powershell, it'll have the full distinguished name there. Below you can see me run the command,
+<img width="975" height="843" alt="Screenshot 2026-08-25 194405" src="https://github.com/user-attachments/assets/55d8bbda-cf72-4dfc-ac07-715005be86af" />
+
+
