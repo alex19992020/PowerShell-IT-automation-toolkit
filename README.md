@@ -7,5 +7,6 @@ Ok, I want to show my my understanding of scripting because knowing how to autom
 
 I will now go into my VM and make sure that shared folders between machines is on,
 <img width="776" height="507" alt="image" src="https://github.com/user-attachments/assets/78f17b1e-7791-4ac8-a286-b40cf4d3dae3" />
+
 As you can see above, the toolkit folder is shared so I'll be able to see it in the DC01 machine.
 
