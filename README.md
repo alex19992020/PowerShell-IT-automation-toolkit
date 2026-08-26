@@ -16,6 +16,10 @@ My next step is to change the default path of my scripts to a specific OU unit l
 First, I'm going to test the newHelpDeskUser script to make sure it'll run correctly, the script has a default path of $DefaultOUPath = 'OU=Employees,DC=corp,DC=local'. I want to test it by creating a new user for the IT OU so in order to do that I must change the path to $DefaultOUPath = 'OU=IT,DC=corp,DC=local'. Now I can run this file by running the script with .\New-HelpDeskUser.ps1 -FirstName "Test" -LastName "User" -Department "IT". As you can see below it worked because you can see test user in the IT OU.
 <img width="752" height="303" alt="image" src="https://github.com/user-attachments/assets/65214942-1485-4841-94da-a780221f397f" />
 
+Now I'm going to test the health script with the test user we created with the previous script, below is me running the health script and confirming that it all works
+<img width="981" height="529" alt="image" src="https://github.com/user-attachments/assets/09e8cffa-5f09-4fdd-bb5d-f43031800743" />
+
+
 
 
 
