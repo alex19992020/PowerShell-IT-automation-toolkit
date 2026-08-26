@@ -19,6 +19,8 @@ First, I'm going to test the newHelpDeskUser script to make sure it'll run corre
 Now I'm going to test the health script with the test user we created with the previous script, below is me running the health script and confirming that it all works
 <img width="981" height="529" alt="image" src="https://github.com/user-attachments/assets/09e8cffa-5f09-4fdd-bb5d-f43031800743" />
 
+I ran the password script as well and it worked as you can tell by the password expired being true, I just didn't get a screenshot of it but all 3 scripts worked.
+
 
 
 
