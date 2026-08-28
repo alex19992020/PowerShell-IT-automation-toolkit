@@ -21,7 +21,7 @@ Now I'm going to test the health script with the test user we created with the p
 
 I ran the password script as well and it worked as you can tell by the password expired being true, I just didn't get a screenshot of it but all 3 scripts worked.
 
-The next step is for me to try and break the script, pass: duplicate account creation, resetting a username that doesn't exist, a bad OU path. I want to confirm the error handling actually catches it cleanly instead of throwing a raw PowerShell error.
+The next step is for me to try and break the script, pass: duplicate account creation, resetting a username that doesn't exist, a bad OU path. I want to confirm the error handling actually catches it cleanly instead of throwing a raw PowerShell error. I am doing this to show how I would go about in fixing scripting errors if and when I come up on them at work.
 
 
 
