@@ -23,6 +23,9 @@ I ran the password script as well and it worked as you can tell by the password 
 
 The next step is for me to try and break the script, pass: duplicate account creation, resetting a username that doesn't exist, a bad OU path. I want to confirm the error handling actually catches it cleanly instead of throwing a raw PowerShell error. I am doing this to show how I would go about in fixing scripting errors if and when I come up on them at work.
 
+Test 1: I will try to create the same user twice
+I already have a 'Test User' in the IT OU. I will run the exact same command again: `.\New-HelpDeskUser.ps1 -FirstName "Test" -LastName "User" -Department "IT"` A PASS will look like this: red error text on screen saying the username already exists, and an [ERROR] line in the log - NOT a second account getting created, and NOT a raw ugly PowerShell exception. If it silently creates a duplicate or a weird username, that's a bug worth knowing about.
+
 
 
 
