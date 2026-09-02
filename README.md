@@ -25,6 +25,9 @@ The next step is for me to try and break the script, pass: duplicate account cre
 
 Test 1: I will try to create the same user twice
 I already have a 'Test User' in the IT OU. I will run the exact same command again: `.\New-HelpDeskUser.ps1 -FirstName "Test" -LastName "User" -Department "IT"` A PASS will look like this: red error text on screen saying the username already exists, and an [ERROR] line in the log - NOT a second account getting created, and NOT a raw ugly PowerShell exception. If it silently creates a duplicate or a weird username, that's a bug worth knowing about.
+Here's what happens when I run this test below,
+<img width="1144" height="510" alt="image" src="https://github.com/user-attachments/assets/67daac92-80d9-4fae-af06-c7078a9ff9eb" />
+
 
 
 
