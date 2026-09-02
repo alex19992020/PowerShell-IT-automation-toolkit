@@ -43,6 +43,7 @@ Here's is what happens when I run test 3,
 
 Above shows that the script failed instead of silently creating the account somewhere unexpected, and it was logged correctly meaning that my script doesn't have any bugs.
 In order to make sure nothing was created silently, we ran the command "Get-ADUser -Filter "Surname -eq 'Path'", its supposed to return nothing, if it did return something, that means that the script did create the account somewhere, but as you can see below, nothing was returned.
+
 <img width="772" height="192" alt="Screenshot 2026-09-01 195930" src="https://github.com/user-attachments/assets/35c7e08e-bde2-4342-9a41-43d0a16ae937" />
 
 
