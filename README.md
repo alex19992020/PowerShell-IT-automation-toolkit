@@ -32,11 +32,17 @@ Here's what happens when I run this test below,
 This shows that my script passed the test, no duplicate account was created, it failed loudly and clearly as seen in the log above. This shows that my script runs good and it has no bugs.
 You'll notice two [ERROR] lines for one command. That is not two failed attempts, it's the same run logging twice because when looking at the script logic: when it detects the duplicate username, it logs an ERROR and then throws an exception with that same message. That exception gets caught by the outer catch block at the bottom of the script, which logs another ERROR with the same text. So one failure produces two log entries, that's not broken, but it does make it slightly redundant. We can make the log look more clear by removing the "Write-HelpDeskLog" from inside the duplicate check block. 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Now for test 2, I will reset a password for a username that doesn't exist:
 I will Run: `.\Reset-HelpDeskPassword.ps1 -Username "nobodyhere"` A PASS will look like this: a clean red error message (something like "Cannot find an object with identity 'nobodyhere'") and an [ERROR] line in the log. This is a very realistic error that I will encounter working as an IT technician - a help desk tech mistyping a username in a ticket system happens constantly, so the script needs to fail politely instead of throwing a wall of unreadable red text.
 
 Here is what happens when I run test 2,
 <img width="1191" height="239" alt="Screenshot 2026-09-01 194318" src="https://github.com/user-attachments/assets/7316b43a-c336-492f-8802-0dc1d9a2fca6" />
+
+This is the error we want to see when working in IT because it clearly says it can't find 'nobodyhere', not some vague failure. This type of error I would be able to act on immediately rather than having to dig further.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Now for test 3, I will try to provision into an OU that doesn't exist:
 Run: `.\New-HelpDeskUser.ps1 -FirstName "Bad" -LastName "Path" -OUPath "OU=DoesNotExist,DC=corp,DC=local"` A PASS will look like this: an error about the path/OU not being found, logged as [ERROR], and no account created anywhere (check with `Get-ADUser -Filter "Surname -eq 'Path'"` afterward to be sure it didn't land somewhere unexpected).
@@ -48,6 +54,7 @@ Above shows that the script failed instead of silently creating the account some
 In order to make sure nothing was created silently, we ran the command "Get-ADUser -Filter "Surname -eq 'Path'", its supposed to return nothing, if it did return something, that means that the script did create the account somewhere, but as you can see below, nothing was returned.
 
 <img width="772" height="192" alt="Screenshot 2026-09-01 195930" src="https://github.com/user-attachments/assets/35c7e08e-bde2-4342-9a41-43d0a16ae937" />
+
 
 
 
