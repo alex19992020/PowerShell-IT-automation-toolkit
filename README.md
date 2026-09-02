@@ -29,6 +29,13 @@ I already have a 'Test User' in the IT OU. I will run the exact same command aga
 Here's what happens when I run this test below,
 <img width="1144" height="510" alt="image" src="https://github.com/user-attachments/assets/67daac92-80d9-4fae-af06-c7078a9ff9eb" />
 
+Now for test 2, I will Reset a password for a username that doesn't exist:
+I will Run: `.\Reset-HelpDeskPassword.ps1 -Username "nobodyhere"` A PASS will look like this: a clean red error message (something like "Cannot find an object with identity 'nobodyhere'") and an [ERROR] line in the log. This is a very realistic error that I will encounter working as an IT technician - a help desk tech mistyping a username in a ticket system happens constantly, so the script needs to fail politely instead of throwing a wall of unreadable red text.
+
+Here is what happens when I run test 2,
+<img width="1191" height="239" alt="Screenshot 2026-09-01 194318" src="https://github.com/user-attachments/assets/7316b43a-c336-492f-8802-0dc1d9a2fca6" />
+
+
 
 
 
