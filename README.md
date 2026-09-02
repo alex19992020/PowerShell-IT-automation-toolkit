@@ -29,6 +29,9 @@ I already have a 'Test User' in the IT OU. I will run the exact same command aga
 Here's what happens when I run this test below,
 <img width="1144" height="510" alt="image" src="https://github.com/user-attachments/assets/67daac92-80d9-4fae-af06-c7078a9ff9eb" />
 
+This shows that my script passed the test, no duplicate account was created, it failed loudly and clearly as seen in the log above. This shows that my script runs good and it has no bugs.
+You'll notice two [ERROR] lines for one command. That is not two failed attempts, it's the same run logging twice because when looking at the script logic: when it detects the duplicate username, it logs an ERROR and then throws an exception with that same message. That exception gets caught by the outer catch block at the bottom of the script, which logs another ERROR with the same text. So one failure produces two log entries, that's not broken, but it does make it slightly redundant. We can make the log look more clear by removing the "Write-HelpDeskLog" from inside the duplicate check block. 
+
 Now for test 2, I will reset a password for a username that doesn't exist:
 I will Run: `.\Reset-HelpDeskPassword.ps1 -Username "nobodyhere"` A PASS will look like this: a clean red error message (something like "Cannot find an object with identity 'nobodyhere'") and an [ERROR] line in the log. This is a very realistic error that I will encounter working as an IT technician - a help desk tech mistyping a username in a ticket system happens constantly, so the script needs to fail politely instead of throwing a wall of unreadable red text.
 
