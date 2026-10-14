@@ -2,7 +2,7 @@
 
 PowerShell scripts that automate the three most common Tier 1 help desk tickets: **new-hire account setup**, **password reset / account unlock**, and **"what's wrong with this user's account?"** checks. Built and tested against my own Active Directory home lab (`corp.local`), with shared logging and deliberate failure testing.
 
-> **30-second summary:** I built three Active Directory scripts plus a shared logging module using an AI-assisted workflow (Claude), then deployed them to my own Windows Server 2022 domain controller. I tested them end-to-end and tried to break them on purpose (duplicate accounts, mistyped usernames, bad OU paths) to confirm they fail cleanly and leave an audit trail. AI sped up the first draft; I owned the deployment, testing, verification, and review. Below I explain why each design choice was made, how I used AI (and where I didn't trust it), what went wrong while testing, and what I'd change next.
+> **30-second summary:** I built 3 Active Directory scripts plus a shared logging module using an AI-assisted workflow (Claude), then deployed them to my own Windows Server 2022 domain controller. I tested them end-to-end and tried to break them on purpose (duplicate accounts, mistyped usernames, bad OU paths) to confirm they fail cleanly and leave an audit trail. AI sped up the first draft; I owned the deployment, testing, verification, and review. Below I explain why each design choice was made, how I used AI (and where I didn't trust it), what went wrong while testing, and what I'd change next.
 
 ---
 
